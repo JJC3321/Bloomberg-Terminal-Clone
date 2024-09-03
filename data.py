@@ -17,11 +17,10 @@ st.title("Bloomberg Terminal Clone")
 ticker = st.text_input("Enter a stock ticker symbol: ")
 
 if ticker:
-    # Create two columns with adjusted width ratios
-    col1, col2 = st.columns([4, 1])  # Adjust the width ratio as needed
+    col1, col2 = st.columns([4, 1]) 
     
     with col1:
-        # Chart
+        # Stock price Graph
         fig = go.Figure()
         df = yf.download(tickers=ticker, period='5y', interval='1d')
         fig.add_trace(go.Scatter(x=df.index, y=df['Close'], mode='lines', name='Close Price'))
@@ -84,5 +83,4 @@ if ticker:
         df = pd.DataFrame(data)
         table_html = df.to_html(index=False, header=False)
         
-        # Display the table
         st.markdown(table_html, unsafe_allow_html=True)
