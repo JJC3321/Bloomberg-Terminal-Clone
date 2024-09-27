@@ -1,4 +1,4 @@
-# Bloomberg-Terminal-Clone
+# Stock-Terminal
 
 Work in Progress!
 
